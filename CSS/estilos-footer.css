@@ -1,0 +1,101 @@
+footer h3{
+	color: #EEE;
+	padding: 15px;
+	border-radius: 0 0 10px 10px;
+}
+footer a{
+	color: #FFF;
+	text-decoration: none;
+}
+footer a:hover{
+	text-decoration: underline;
+}
+ul{
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+}
+li{
+	padding: 5px;
+}
+.redes h3{
+	padding: 15px;
+}
+.red{
+	padding: 3px;
+}
+.red img{
+	border-radius: 10px;
+}
+.map{
+	padding: 20px;
+}
+
+footer{
+	color: #BBB;
+	background-color: #049;
+	padding: 20px;
+	border-radius: 0 0 20px 20px;
+
+	display: grid;
+	grid-gap: 20px;
+	grid-template-areas: 
+				"temas contacto mapa redes";
+	grid-template-columns: 25% 25% 25% 25%;	
+	align-items: start;		
+}
+.temas-nav{
+	grid-area: temas; 
+}
+.contacto{
+	grid-area: contacto;
+}
+.mapa{
+	grid-area: mapa;
+}
+.redes{
+	grid-area: redes;
+
+	display: flex;
+	flex-direction: column;
+}
+
+@media (max-width: 1165px){
+	footer{
+		grid-template-areas: 
+				"contacto mapa redes";
+		grid-template-columns: 33% 33% 33%;	
+	}
+	.temas-nav{
+		display: none;
+	}
+
+@media (max-width: 940px){
+	footer{
+		grid-template-areas: 
+				"contacto mapa ";
+		grid-template-columns: 50% 50% ;	
+	}
+	.temas-nav{
+		display: none;
+	}
+	.redes{
+		display: none;
+	}	
+
+@media (max-width: 650px){
+	footer{
+		grid-template-areas: 
+				"contacto" 
+				"mapa" ;
+		grid-template-columns: 100%;
+		grid-template-rows: 1fr 1fr;
+	}
+	.temas-nav{
+		display: none;
+	}
+	.redes{
+		display: none;
+	}
+}

@@ -1,0 +1,222 @@
+/* --------------------------------
+Fuente de todo el documento 
+-----------------------------------*/
+
+:root{
+	font-family: "verdana";
+}
+body{
+	background-color:#ddd;
+	color: #555;
+	font-size: 20px;
+}
+
+/* ---------------------------------
+Dimensiones del logo
+------------------------------------ */
+
+#logo{
+	width: 90px;
+	height: 90px;
+	border-radius: 10px;
+}
+
+/* ---------------------------------
+Fuente y color de los titulos 
+------------------------------------*/
+
+h1,h2,h3{
+	font-family: sans-serif,"verdana";
+	margin: 0;
+}
+h1{
+	font-size: 50px;
+	color: darkred;
+}
+
+/* ---------------------------------
+Estilos de la barra de navegacion div-bn que es
+el div de la barra de navegacion y los links emergentes
+------------------------------------*/
+
+.div-bn{	
+	background-color: rgb(0,85,170);
+	background-image: url("../IMG/productos.jpg") ;
+	background-blend-mode: multiply ;
+	background-size: contain;
+	background-repeat: no-repeat;
+	
+	height: 310px;
+	font-size: 25px;
+	font-family: sans-serif "verdana";
+	border-radius: 0px 0px 10px 10px;
+} 
+.barra-nav a{
+	width: 100%;
+	color: #AAA;
+	text-decoration-line: none;
+	text-align: center;
+	margin: 0;
+	padding: 7px 0;
+}
+.embed-emp a,.embed-pro a,.embed-cli a,.embed-con a{
+	display: none;
+	width: 150px; 
+	color: #AAA;
+	text-align: left;
+	text-decoration-line: none;
+	margin: 0 30px;
+	padding: 0 20px 0 ;
+}
+.div-bn a:hover{
+	color: #FFF;
+	background: rgba(0,0,0,0.5);
+}
+/*
+#pro:hover .embed-pro{
+	display: block;
+}*/
+
+/* ----------------------------------
+Organizacion de la barra de inicio
+------------------------------------- */
+.barra-inicio{
+	text-align: center;
+	border: 6px solid #05A;	
+	border-radius: 20px;
+	display: grid;
+	align-items: center;
+	grid-template-areas: 
+			"logo titulo"
+			"logo lema"
+			"barra-nav barra-nav";
+	grid-template-columns: 100px auto;
+	grid-template-rows: 54px 40px auto;
+}
+/* 
+-----------------------------------------------
+Definicion de las areas del grid barra-inicio
+----------------------------------------------- */
+
+.logo{
+	grid-area: logo;
+}
+
+.titulo{
+	margin: 5px 10px;
+	grid-area: titulo;
+}
+
+.lema{
+	margin: 5px 10px;
+	grid-area: lema;
+}
+.div-bn{
+	grid-area: barra-nav;
+}
+
+/*------------------------------------------------------------
+
+                   Organizacion  del div.div-bn
+
+dentro del item div-bn estan: nav.barra-nav y div.embebidos 
+
+--------------------------------------------------------------
+
+nav.barra-nav es un flexbox con los links principales*/
+
+.barra-nav{
+	display: flex;
+	justify-content: space-around;
+}/*
+
+div.enbebido es un grid con los links emergentes*/
+
+.embebidos{
+	display: grid;
+	grid-template-columns:
+	[emp-start] 1fr
+	[emp-end pro-start] 1fr
+	[pro-end cli-start] 1fr 
+	[cli-end con-start] 1fr
+	[con-end];
+	grid-template-rows:repeat(9, 1fr);
+	justify-items: end;	
+}
+
+/* orden del grid div.embebidos */
+
+.embed-emp{
+	grid-column: emp-start / emp-end;
+}
+.embed-pro{
+/*	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,0.5); -- ver como se puede mejorar */
+	grid-column: pro-start / pro-end;	
+}
+.embed-cli{
+/*	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,0.5); */
+	grid-column: cli-start / cli-end;	
+}
+.embed-con{
+/*	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,0.5); */
+	grid-column: con-start / con-end;	
+}
+
+/* embed-emp, embed-pro, embed-cli, embed-con 
+son flexbox en columna */
+
+.embed-emp,.embed-pro,.embed-cli,.embed-con{
+	display:  flex;
+	justify-content: right;
+	flex-direction: column;
+}	
+
+
+/* ----------------------------------
+Media-Query (hasta 850px)
+------------------------------------- */
+
+@media (max-width: 850px){
+	.barra-inicio{
+		grid-template-areas: 
+			"titulo"
+			"barra-nav";
+		grid-template-columns:  1fr;
+		grid-template-rows: 100px auto;
+	}
+	.div-bn{
+		background-image: url("../IMG/productoslg.jpg");
+		background-size: cover;
+	}
+	.lema{
+		display: none;
+	}
+	.logo{
+		display: none;
+	}	
+} 
+
+/* ----------------------------------
+Media-Query (hasta 550px)
+------------------------------------- */
+
+@media (max-width: 550px){
+	.barra-inicio{
+		grid-template-rows: 100px 310px;
+	}
+	.div-bn{
+		background-image: url("../IMG/productoslg.jpg");
+		background-size: cover;
+	}
+	.barra-nav{
+		flex-direction: column;
+	}
+	.lema{
+		display: none;
+	}
+	.logo{
+		display: none;
+	}
+} 
+
+

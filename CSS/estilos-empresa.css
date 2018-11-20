@@ -1,0 +1,209 @@
+.galeria img{
+	width: 300px;
+	height: 200px;
+}
+.foto{
+	height: 150px;
+	width: auto;
+	margin: 30px 30px 0 30px;
+	float: right;
+}	
+.planta h2{
+	text-align: center;
+}
+
+/*revisar que solo haya lo necesario*/
+/***********************************/
+
+.QR a img:hover{
+	filter: alpha(opacity=70);/*para IE8 -*/
+	opacity: 1.0;
+	opacity: 0.7;
+}
+.tps a img:hover{
+	filter: alpha(opacity=70);/*para IE8 -*/
+	opacity: 1.0;
+	opacity: 0.7;
+}
+.PD a img:hover{
+	filter: alpha(opacity=70);/*para IE8 -*/
+	opacity: 1.0;
+	opacity: 0.7;
+}
+
+/***********************************/
+
+.QR a img{
+	filter: alpha(opacity=100);/*para IE8 -*/
+	opacity: 1.0;
+	border-radius: 10px 10px 0 0;
+	width: 350px;
+	height: 230px;
+}
+.tps a img{
+	filter: alpha(opacity=100);/*para IE8 -*/
+	opacity: 1.0;
+	border-radius: 10px 10px 0 0;
+	width: 350px;
+	height: 230px;
+}
+.PD a img{
+	filter: alpha(opacity=100); /*para IE8 -*/
+	opacity: 1.0;
+	border-radius: 10px 10px 0 0;
+	width: 350px;
+	height: 230px;
+}
+
+/**********************************/
+
+.QR p{
+	color: #FFF;
+	padding: 5px;
+	margin: 5px;
+	background-color: #059;
+	width: auto;
+	height: 40px;
+}
+.tps p{
+	color: #FFF;
+	padding: 5px;
+	margin: 5px;
+	background-color: #059;
+	width: auto;
+	height: 40px;
+}
+.PD p{
+	color: #FFF;
+	padding: 5px;
+	margin: 5px;
+	background-color: #059;
+	width: auto;
+	height: 40px;
+}
+
+/************************************************/
+
+.empresa{
+	display: flex;
+	flex-direction: column;
+}
+
+/*************************************************/
+
+.links{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+}
+.links > div{
+	background-color: #059;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 10px 10px 0;
+	border: 3px solid #05A;
+	border-radius: 15px;
+}
+
+/*************************************************/
+
+.QS{
+	flex: 1;
+
+	margin: 20px;
+}
+
+.QS h2{
+	text-align: center;
+	padding: 15px;
+}
+
+.QS-contenido{
+	text-align: justify;
+}
+
+/**************************************************/
+
+.VM{
+	flex: 1;
+
+	display: flex;
+	flex-basis: 50%;
+	justify-content: space-around;
+}
+.Vision{
+	color: #EEE;
+	background-color: #06B;
+	padding: 30px;
+	margin: 20px;
+}
+.Mision{
+	color: #EEE;
+	background-color: #06B;
+	padding: 30px;
+	margin: 20px;
+}
+
+/**************************************************/
+
+.planta{
+	flex: 1;
+
+	display: flex;
+	flex-basis: 22%;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	
+	text-align: center;
+	padding: 20px;	
+}
+
+.PL{
+	padding: 20px 20px 30px;
+	border-radius: 0 0 20px 20px
+}
+/**************************************************/
+
+@media (max-width: 1245px){
+	.productos{
+		display: none;
+	}
+}
+
+@media (max-width: 850px){
+	.QS-contenido .no-importante{
+		display: none;
+	}
+	.links{
+		justify-items: center;
+	}
+	.productos{
+		display: none;
+	}
+	.PQR{
+		display: none;
+	}
+}
+
+@media (max-width: 720px){
+	.QS-contenido .no-importante{
+		display: none;
+	}
+	.VM{
+		flex-direction: column;		
+	}
+}
+
+@media (max-width: 550px){
+	.foto{
+	float: none;
+	text-align: center;
+	margin: 0 0 20px; 
+	}
+	.no-importante{
+		display: none;
+	}
+	.VM{
+		flex-direction: column;		
+	}
+}
